@@ -85,6 +85,10 @@ html
     #form-outer
       p#description
         | Anonymous Feedback from staff
+        table.table.table-striped.table-bordered
+          each task in feedback
+            tr
+              td #{task.Feedback}
       form#survey-form(method='POST', action='/addFeedback')
         .rowTab
           .labels
