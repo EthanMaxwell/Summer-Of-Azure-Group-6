@@ -47,7 +47,6 @@
    async addItem(item) {
      debug('Adding an item to the database')
      item.date = Date.now()
-     item.completed = false
      const { resource: doc } = await this.container.items.create(item)
      return doc
    }

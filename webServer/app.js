@@ -23,7 +23,7 @@ const CosmosClient = require('@azure/cosmos').CosmosClient
  app.use(cookieParser())
  app.use(express.static(path.join(__dirname, 'public')))
 
- //Todo App:
+ //App:
  const cosmosClient = new CosmosClient({
    endpoint: config.host,
    key: config.authKey
@@ -37,16 +37,14 @@ const CosmosClient = require('@azure/cosmos').CosmosClient
    .catch(err => {
      console.error(err)
      console.error(
-       'Shutting down because there was an error settinig up the database.'
+       'Shutting down because there was an error settiing up the database.'
      )
      process.exit(1)
    })
 
  app.get('/', (req, res, next) => taskList.showTasks(req, res).catch(next))
- app.post('/addtask', (req, res, next) => taskList.addTask(req, res).catch(next))
- app.post('/completetask', (req, res, next) =>
-   taskList.completeTask(req, res).catch(next)
- )
+ app.post('/addFeedback', (req, res, next) => taskList.addTask(req, res).catch(next))
+
  app.set('view engine', 'jade')
 
  // catch 404 and forward to error handler
