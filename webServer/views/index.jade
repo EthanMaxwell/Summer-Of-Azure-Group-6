@@ -83,16 +83,11 @@ html
   body
     h1#title Honest Feedback Form
     #form-outer
-      p#description
-        | Anonymous Feedback from staff
-        table.table.table-striped.table-bordered
-          each task in feedback
-            tr
-              td #{task.Feedback}
+      p#description "#{feedbacks[Math.floor(feedbacks.length * Math.random())].feedback}" - Anonymous
       form#survey-form(method='POST', action='/addFeedback')
         .rowTab
           .labels
             label(for='address') Feedback: 
           .rightTab
-            textarea#comments.input-field(style='height:200px;resize:vertical;', name='Feedback', placeholder='Enter your feedback here...')
+            textarea#comments.input-field(style='height:200px;resize:vertical;', name='feedback', placeholder='Enter your feedback here...')
           button#submit(type='submit') Submit
