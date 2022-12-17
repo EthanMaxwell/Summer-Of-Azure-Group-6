@@ -82,6 +82,7 @@ html
       }
   body
     h1#title Honest Feedback Form
+    img(src='/logo', alt='logo')
     #form-outer
       p#description "#{feedbacks[Math.floor(feedbacks.length * Math.random())].feedback}" - Anonymous
       form#survey-form(method='POST', action='/addFeedback')
