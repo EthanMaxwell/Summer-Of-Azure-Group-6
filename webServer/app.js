@@ -2,6 +2,9 @@ const CosmosClient = require('@azure/cosmos').CosmosClient
 const config = require('./config')
 const TaskList = require('./routes/tasklist')
 const TaskDao = require('./models/taskDao')
+const { BlobServiceClient } = require("@azure/storage-blob");
+const { v1: uuidv1 } = require("uuid");
+require("dotenv").config();
 
 const express = require('express')
 const path = require('path')
